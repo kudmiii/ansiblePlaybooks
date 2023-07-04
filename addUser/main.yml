@@ -1,0 +1,8 @@
+---
+- name: Create new users
+  become: true
+  user:
+    name: "{{ item.name }}"
+    shell: /bin/bash
+    password: "{{ item.password | password_hash('sha512') }}"
+  with_items: "{{ users }}"
