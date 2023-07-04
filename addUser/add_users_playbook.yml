@@ -1,0 +1,13 @@
+---
+- name: Add users to Ubuntu
+  hosts: your_server
+  become: true
+  roles:
+    - add_users
+  vars:
+    users:
+      - name: user1
+        password: password1
+      - name: user2
+        password: password2
+      # Add more users as needed
